@@ -150,3 +150,23 @@ true
 
 
 alt shift f : formattage et couleur
+
+
+https://devdocs.io/
+
+https://flukeout.github.io/
+
+
+
+var value='voilie'; products.find(function(unElem){return unElem.name===value;})
+
+var value='voilier'; products.filter(function(unElem){return unElem.name===value;})
+
+-->
+Object.assign([],products,[{value:2}])
+[...products,{value:2}]
+
+products.push({v:1233},{zert:123})
+products.pop()
+
+a.slice...
