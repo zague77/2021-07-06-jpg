@@ -94,3 +94,58 @@ npm start
 //http://localhost:3001/#
 //descativer le cote : websocket type javascript
 //
+
+
+// css diner
+
+----dans editeur chrome : exemple
+:3000/favicon.ico:1 Failed to load resource: the server responded with a status of 404 (Not Found)
+document.getElementById('navbar')
+<div id=​"navbar">​…​</div>​
+document.getElementsByClassName('list-view-description')
+HTMLCollection []length: 0__proto__: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()__proto__: Object
+Array.isArray(document.getElementsByClassName('list-view-description'))
+false
+document.getElementsByTagName('div')
+HTMLCollection(16) [div#app, div#header, div#navbar, div.navbar-header, div.collapse.navbar-collapse.navbar-ex1-collapse, div.form-group, div#wrapper, div#finder, div#list, div.list-produit, div.list-produit-content, div#list-view, div#list-view-price, div#list-view-description, div#list-view-dimensions, div.list-view-actions, app: div#app, header: div#header, navbar: div#navbar, wrapper: div#wrapper, finder: div#finder, …]
+docuement.querySelector('#list-view')
+VM751:1 Uncaught ReferenceError: docuement is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM751:1
+document.querySelectorAll('div')
+NodeList(16) [div#app, div#header, div#navbar, div.navbar-header, div.collapse.navbar-collapse.navbar-ex1-collapse, div.form-group, div#wrapper, div#finder, div#list, div.list-produit, div.list-produit-content, div#list-view, div#list-view-price, div#list-view-description, div#list-view-dimensions, div.list-view-actions]
+Array.isArray(document.querySelectorAll('div'))
+false
+var stocks=document.getQuerySelectorAll('.list-produit-content h3, #list-view h2')
+VM1222:1 Uncaught TypeError: document.getQuerySelectorAll is not a function
+    at <anonymous>:1:21
+(anonymous) @ VM1222:1
+var stocks=document.querySelectorAll('.list-produit-content h3, #list-view h2')
+undefined
+stocks
+NodeList(2) [h3, h2]
+var stock=document.querySelector('.list-produit-content h3')
+undefined
+stock
+<h3>​stock:3​</h3>​
+type of stock
+VM1424:1 Uncaught SyntaxError: Unexpected identifier
+typeof stock
+"object"
+var arr=[]
+undefined
+typeof arr
+"object"
+arr.functionA=function(){}
+ƒ (){}
+arr
+[functionA: ƒ]functionA: ƒ ()length: 0__proto__: Array(0)
+arr.push('value A')
+1
+arr
+["value A", functionA: ƒ]0: "value A"functionA: ƒ ()length: 1__proto__: Array(0)
+Array.isArray(arr)
+true
+
+
+
