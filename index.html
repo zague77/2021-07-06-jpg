@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" media="screen" href="styles/style.css">
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-<!-- Latest compiled and minified CSS & JS -->
-<link rel="stylesheet" media="screen" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-<link rel="stylesheet" media="screen" href="styles/style.css">
-<script src="./node_modules/jquery/dist/jquery.js"></script>
-<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
     <div id="app">
         <div id="header">Header</div>
         <div id="navbar">
-            
+
             <nav class="navbar navbar-inverse" role="navigation">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -29,7 +32,7 @@
                     </button>
                     <a class="navbar-brand" href="#">Title</a>
                 </div>
-            
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
@@ -45,7 +48,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b
+                                    class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -56,48 +60,46 @@
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
-            
 
         </div>
         <div id="wrapper">
             <div id="finder">
-                 <div id="list">
-
-
+                <div id="list">
+                    <h2>Liste des produits</h2>
                     <div class="list-produit">
-                        <im src="https://picsum.photos/id/642/150/150" alt="">
+                        <img src="https://picsum.photos/id/642/150/150" alt="">
                         <div class="list-produit-content">
                             <h2>bateau</h2>
-                            dvfkkk
-                            <h3 style="text-align : center; font-weight:900;">stock:3</h3>
+                            <h3 style="text-align: center; font-weight: 900;">stock:3</h3>
                         </div>
-                    <div id="list-view">
-                        <h1>Bateau</h1>
-                        <img src="https://picsum.photos/id/642/150/150" alt="">
-                        <hr />
-                        <h2>stock:3</h2>
-                        <div id="list-view-price">5000.48&euro;</div>
-                        <h4>Description</h4>
-                        <div id="list-view-description">Lorem blal</div>
-                        <h4>Dimensions</h4>
-                        <div id="list-view-dimensions">
-                                <span  class="dimensions-size">40 pieds</span>;
-                                <span class="dimensions-tons">10 tonneaux</span>
-                        <hr /> <span class="dimensions-speed">vitess : 5 noeuds</span>
+                    </div>
+                </div>
+                <div id="list-view">
+                    <h1>Bateau</h1>
+                    <img src="https://picsum.photos/id/642/150/150" alt="">
+                    <hr />
+                    <h2>stock :3</h2>
+                    <h4>Prix :</h4>
+                    <div class="list-view-price">50000.48&euro;</div>
+                    <h4>Description</h4>
+                    <div class="list-view-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Corporis, cum. Voluptate aut doloremque pariatur autem sapiente odio reprehenderit rerum impedit
+                        non tempora dignissimos laudantium, soluta in quidem ratione illo eum.</div>
+                    <h4>Dimensions</h4>
+                    <div class="list-view-dimensions">
+                        <span class="dimensions-size">40 pieds</span>;<span class="dimensions-tons">10 tonneaux</span>
+                        <hr /><span class="dimension-speed"></span>vitesse :5 noeuds</span>
+                    </div>
+                    <div class="list-view-actions">
+                        <button type="button" class="btn btn-danger">supr. reference</button>
+                        <button type="button" class="btn btn-warning">retirer 1 au stock</button>
+                        <button type="button" class="btn btn-info">ajouter 1 au stock</button>
 
-
-                        </div>
-
-
-                        <div class="list-view-actions">
-                            <button type="button" class="btn btn-danger">suppr. reference</button>
-                            <button type="button" class="btn btn-warning">retirer 1 au stock</button>
-                            <button type="button" class="btn btn-info">ajouter 1 au stock</button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
