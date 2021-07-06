@@ -1,0 +1,11 @@
+https://github.com/zague77/2021-07-06-jpg.git
+
+git clone https://github.com/zague77/2021-07-06-jpg.git
+
+cd 2021-07-06-jpg
+
+code .
+
+
+git config --global user.email "alex.j.alves@gmail.com"
+  git config --global user.name "zague77"
