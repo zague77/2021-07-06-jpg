@@ -1,4 +1,53 @@
-https://github.com/zague77/2021-07-06-jpg.git
+---Settings sets : plugin
+
+CODE SETTINGS SYNC UPLOAD SUMMARY
+Version: 3.4.3
+--------------------
+GitHub Token: gho_**********
+GitHub Gist: 59c6c0c9b4a3a3ef3a5a619bd95d8a44
+GitHub Gist Type: Secret
+
+Restarting Visual Studio Code may be required to apply color and file icon theme.
+--------------------
+Files Uploaded:
+  extensions.json > extensions.json
+  settings.json > settings.json
+  life-cycle.json > globalStorage\mhutchie.git-graph\life-cycle.json
+
+Extensions Ignored:
+  No extensions ignored.
+
+Extensions Removed:
+  No extensions removed.
+
+Extensions Added:
+  auto-close-tag v0.5.10
+  auto-rename-tag v0.1.6
+  bootstrap-3-snippets v0.1.0
+  code-settings-sync v3.4.3
+  git-graph v1.30.0
+  html-snippets v0.2.1
+  js-snippets v0.2.6
+  npm-install v0.0.1
+  npm-intellisense v1.3.1
+  path-intellisense v2.3.0
+  React-JS-Snippet v3.0.54
+  vscode-css-formatter v1.0.1
+  vscode-eslint v2.1.16
+  vscode-html-css v1.9.1
+  vscode-language-pack-fr v1.52.2
+  vscode-npm-script v0.3.22
+  vscode-npm-scripts v0.2.4
+--------------------
+Done.
+
+
+----
+////
+----
+
+// https://github.com/zague77/2021-07-06-jpg.git
+// cmd sur le rép :
 
 git clone https://github.com/zague77/2021-07-06-jpg.git
 
@@ -8,4 +57,40 @@ code .
 
 
 git config --global user.email "alex.j.alves@gmail.com"
-  git config --global user.name "zague77"
+git config --global user.name "zague77"
+
+///command prompt (selectionneur l'interpreteur par defaut)
+
+npm init -y
+//-y pour pas validation à chaque fois
+
+// "main": "index.js",
+//ajout "dependencies":
+// "lite-server
+//-s (dependencies) que l'on doit enregistrer dans le package (pas ds le projet) et pas -g (que par projet)
+//ou
+ npm i -s lite-server 
+
+//installation de projet et pas global
+
+//script execution si pas dans g
+//ajout dans package.json
+  "start" :"lite-server" avec base.dir si besoin
+
+
+  //page html
+  //snippet html 2.5 et change en fr
+  //snippet bs3-cdn après body
+
+  npm i -s bootstrap@3.4
+
+npm i -s jquery@1.11.1
+
+
+npm start 
+
+/*/ouverture port 3000 server
+
+//http://localhost:3001/#
+//descativer le cote : websocket type javascript
+//
