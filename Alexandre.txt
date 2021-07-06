@@ -170,3 +170,6 @@ products.push({v:1233},{zert:123})
 products.pop()
 
 a.slice...
+
+var sealdObject=Object.seal(abc) --> PEUX MODIFIER MAIS Rien supprimer
+var freezeObject=Object.freeze(abc) --> ne peux rien modifier
