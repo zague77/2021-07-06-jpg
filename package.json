@@ -1,0 +1,26 @@
+{
+  "name": "2021-07-06-jpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zague77/2021-07-06-jpg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zague77/2021-07-06-jpg/issues"
+  },
+  "homepage": "https://github.com/zague77/2021-07-06-jpg#readme",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "jquery": "^1.11.1",
+    "lite-server": "^2.6.1"
+  }
+}
