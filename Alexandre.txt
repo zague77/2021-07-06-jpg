@@ -149,3 +149,4 @@ true
 
 
 
+alt shift f : formattage et couleur
