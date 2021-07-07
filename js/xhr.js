@@ -16,7 +16,7 @@ function XHR(baseUrl) {
             //window
             console.log(this);
 
-            _xhr.onreadystatechange=(function(evt){
+            _xhr.onreadystatechange=(evt) => {
                 if(_xhr.readyState<XMLHttpRequest.DONE) return;
                 if(_xhr.status!==200 && _xhr.status!=201){
                     console.log('ERROR');
@@ -27,13 +27,19 @@ function XHR(baseUrl) {
                     
                 
 
-            }).bind(_xhrthis);
+            }
 
-            // bind sur la function
-
+    
             //4. send
             _xhr.send(bodyStr);
     }
+
+    //var xhr=new XHR('http://localhost:5679')
+//xhr.get('/products/1', function (responseText){
+//console.log(responseText);
+//})
+
+
 
     this.get = function (ressourceUrl,callback) {
         _request('GET',ressourceUrl,callback)
