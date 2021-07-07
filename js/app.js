@@ -3,7 +3,7 @@ var json_products = '[{"name":"bateau","img":"https://picsum.photos/id/642/150/1
 
 var products = JSON.parse(json_products);
 function onproductclick(product) {
-    console.log(product);
+  //  console.log(product);
     alert('produit cliqué :');
 }
 
@@ -22,11 +22,11 @@ document.querySelector("#list").append(divCount);
 
 
 
-console.log(products);
+//console.log(products);
 
 var templatelistItem = document.querySelector('.list-produit');
 products.forEach(function (element, index, list) {
-    console.log(index, element);
+    //console.log(index, element);
     //duplication d'elem du dom pour manip
     var elemTmpl = templatelistItem.cloneNode(true);
 
@@ -48,3 +48,7 @@ products.forEach(function (element, index, list) {
 //document.querySelector("#list").innerHTML+='Count : ' + (products.lenght+1);
 
 addCountProduct();
+
+
+//console.error('coucou une erreur')
+//console.warn('coucou une warn')

@@ -1,5 +1,5 @@
 
-'use strict';
+//'use strict';
 
 function XHR(baseUrl) {
     var _baseUrl = baseUrl;

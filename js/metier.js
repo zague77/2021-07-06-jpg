@@ -1,36 +1,81 @@
-function Product(id, name, price) {
-    //champ prive
-    var _id = id;
-    var _price = price;
-    //champ public disponible depuis extérieur
-    this.name = name;
 
-    //getter setter
-    this.getPrice=function(){return _price;}
+//es6
+//es6 , on met plus ";"
+/**
+ * 
+ */
+class Product {
+    price;
+    #name;
+    #id;
 
-    this.setPrice=function(value){
-        if(isNaN(value)){_price=value;} 
+    /***
+     * @param {number} id value of Id
+     * @param {string} name value of name
+     * @param {number} price value of price
+     */
+    constructor(id, name, price) {
+        this.price = price;
+        this.#name = name;
+        this.#id = id;
+    }
+
+    /**
+     * return Id
+     * @returns (string) value of name
+     */
+    get id(){
+        return this.#id;
+    }
+
+    get name(){
+        return this.#name;
+    }
+
+    set id(value){
+        this.#id = value;
+    }
+
+    set name(value){
+         this.#name = value;
     }
 
 
-
-    function _makeDiscount(pcent) {
-        _price = (_price - (price * (pcent / 100))).toFixed(2);
+    //private function
+    /**
+     * make a discount d'une fonction
+     * @param {number} pcent 
+     */
+    #_makeDiscount(pcent){
+        this.price = (this.price - (this.price * (pcent / 100))).toFixed(2);
     }
 
-    //function privée
-    _makeDiscount(10);
+ 
 
+     tojsonString(){
+        return JSON.stringify(
+                Object.assign({name:this.#name, id:this.#id},this));
+    }
 
-    //exposition d'un fonction pricée
-    this.makediscount=_makeDiscount;
+    makediscount=this.#_makeDiscount
 
+ 
 
 }
-var produit = new Product(0, 'zodiac', 100000)
-var produit2 = new Voilier(0, 'zodiac', 100000)
-console.log(produit)
 
 
-produit.makediscount(10);
-console.log(produit.getPrice()+'$');
+class Boat extends Product{
+    #_dimensions=[]
+    constructor(id,name,price){
+        super(id,name,price);
+    }
+
+    addDimension=(dimension)=>{
+        this.#_dimensions.push(dimension);
+    }
+
+        get dimension(){
+            return this.#_dimensions;
+        }
+}
+
