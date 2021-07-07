@@ -1,3 +1,5 @@
+---JOPURNEE 1
+
 ---Settings sets : plugin
 
 CODE SETTINGS SYNC UPLOAD SUMMARY
@@ -177,5 +179,18 @@ var freezeObject=Object.freeze(abc) --> ne peux rien modifier
 
 
 
---JOURNEE  : 
---
+--JOURNEE  2 : 
+--npm i --save-dev json-server
+--Yet Another REST Client sur chrome (plus d'outils extensions chrome)
+
+-- patch : merge, put ajoute
+
+npm run json 
+
+
+
+http://localhost:5679/products?name=voilier
+
+
+http://localhost:5679/products?id_gte=1
+
