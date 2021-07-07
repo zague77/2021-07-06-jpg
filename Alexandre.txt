@@ -270,3 +270,10 @@ var p ={
 undefined
 
 
+
+var xhr= new XHR('http://localhost:5679')
+
+xhr.get('/products/1', function (responseText){
+console.log(responseText);
+})
+
