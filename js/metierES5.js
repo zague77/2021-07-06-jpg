@@ -25,7 +25,6 @@ function Product(id, name, price) {
     //exposition d'un fonction pricée
     this.makediscount=_makeDiscount;
 
-
 }
 var produit = new Product(0, 'zodiac', 100000)
 var produit2 = new Voilier(0, 'zodiac', 100000)
