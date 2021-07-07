@@ -194,3 +194,79 @@ http://localhost:5679/products?name=voilier
 
 http://localhost:5679/products?id_gte=1
 
+http://localhost:5679/products?expand=category
+
+
+////test dans console direct du server chrome http://localhost:5679/
+//shift entrée saut de ligne a l'intéreir 
+var xhr=new XMLHttpRequest();
+xhr.open('GET','http://localhost:5679/products');
+xhr.onreadystatechange=function(evt){
+    console.trace(xhr);
+}
+xhr.send();
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET','http://localhost:5679/products');
+xhr.onreadystatechange=function(evt){
+    if(xhr.readyState<XMLHttpRequest.DONE) {return;}
+    if(xhr.readyState!=200 && xhr.readyState!=201) {
+            console.log('ERREUR');
+            return;
+            }
+    console.trace(xhr);
+
+}
+xhr.send();
+
+
+///ReferenceError
+100 : information
+
+200 : famille des OK
+
+300 : redirection (304 vu comme 200 pare le serveur, a bien reçu la ressource)n Le client reçoit pas
+
+400 : erreur coté Client
+401  pas authorizé
+
+500 : erreur coté server (internal server error)
+il a compris la demande, mais incapable de résoudre
+
+//
+var xhr=new XMLHttpRequest();
+xhr.open('PUT','http://localhost:5679/products/1');
+xhr.setRequestHeader('Content-Type','applicvation/json');
+xhr.onreadystatechange=function(evt){
+    if(xhr.readyState<XMLHttpRequest.DONE) {return;}
+    if(xhr.status!=200 && xhr.status!=201) {
+            console.log('ERREUR');
+            return;
+            }
+    console.trace(xhr.response);
+}
+xhr.send();
+
+var p ={
+    "id": 0,
+    "name": "zodiac",
+    "img": "https://picsum.photos/id/377/150/150",
+    "price": 50000,
+    "decription": "loremQuis cupidatat minim ad laborum velit sint pariatur voluptate sint ullamco dolor veniam enim.Qui laboris deserunt id do non mollit ullamco consectetur ullamco eu elit culpa.",
+    "stock": 2,
+    "dimensions": [
+      {
+        "size": "40 pieds"
+      },
+      {
+        "tons": "40 tonneaux"
+      },
+      {
+        "speed": "40 noeuds"
+      }
+    ],
+    "categorieId": 0
+  };
+undefined
+
+
