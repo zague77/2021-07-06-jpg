@@ -1,0 +1,56 @@
+[
+    {
+        "name": "zodiac",
+        "img": "https://picsum.photos/id/377/150/150",
+        "price": 50000,
+        "decription": "loremQuis cupidatat minim ad laborum velit sint pariatur voluptate sint ullamco dolor veniam enim.Qui laboris deserunt id do non mollit ullamco consectetur ullamco eu elit culpa.",
+        "stock": 2,
+        "dimensions": [
+            {
+                "size": "40 pieds"
+            },
+            {
+                "tons": "40 tonneaux"
+            },
+            {
+                "speed": "40 noeuds"
+            }
+        ]
+    },
+    {
+        "name": "voilier",
+        "img": "https://picsum.photos/id/341/150/150",
+        "price": 2500000,
+        "decription": "loremQuis cupidatat minim ad laborum velit sint pariatur voluptate sint ullamco dolor veniam enim.Qui laboris deserunt id do non mollit ullamco consectetur ullamco eu elit culpa.",
+        "stock": 8,
+        "dimensions": [
+            {
+                "size": "25 pieds"
+            },
+            {
+                "tons": "35 tonneaux"
+            },
+            {
+                "speed": "25 noeuds"
+            }
+        ]
+    },
+    {
+        "name": "voilier",
+        "img": "https://picsum.photos/id/341/150/150",
+        "price": 2500000,
+        "decription": "loremQuis cupidatat minim ad laborum velit sint pariatur voluptate sint ullamco dolor veniam enim.Qui laboris deserunt id do non mollit ullamco consectetur ullamco eu elit culpa.",
+        "stock": 8,
+        "dimensions": [
+            {
+                "size": "25 pieds"
+            },
+            {
+                "tons": "35 tonneaux"
+            },
+            {
+                "speed": "25 noeuds"
+            }
+        ]
+    }
+]

@@ -173,3 +173,9 @@ a.slice...
 
 var sealdObject=Object.seal(abc) --> PEUX MODIFIER MAIS Rien supprimer
 var freezeObject=Object.freeze(abc) --> ne peux rien modifier
+
+
+
+
+--JOURNEE  : 
+--
