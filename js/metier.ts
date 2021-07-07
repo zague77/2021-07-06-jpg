@@ -91,20 +91,13 @@ class Boat extends Product {
     }
     #_loading() {
         const ressourceUrl = `http://${REST_BASE_URL}${Product.RESSOURCE_NAME}/${this.id}`
-      //  const promise = fetch(ressourceUrl); vu comme un get
-
-
-      const promise = fetch(ressourceUrl,{
-             method :'GET',
-             headers :{
-                "Content-Type" : "application/json"
-            }
-
-
-
+        const promise = fetch(ressourceUrl,{
+            method:'GET',
+            headers:{
+                "Content-Type":"application/json"
+            },
             
-
-      });
+        });
         promise.then(
             (response) => { return response.json() },
             (unsuccessResponse) => { console.error('Une errur de chargement',unsuccessResponse) }

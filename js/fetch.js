@@ -1,32 +1,20 @@
-/***
- *  Class de fetch
- * 
- *  @param {String} baseUrl value  baseUrl
- * 
- */
-
-class Fetch {
+class FetchCrud {
     #baseurl;
     constructor(baseUrl) {
         this.#baseurl = baseUrl;
     }
-
-
-
-/***
- *  Private method of call
- *  @param {String} ressourceUrl value  ressourceUrl
- *  @param {Function} callback value  callback
- *  @param {String} method value  method
- *  @param {String} bodyStr value  bodyStr
- *  @param {Function} unsuccessCallback value  unsuccessCallback
- *  @returns  {Promise} promise of fetch
- * 
- */
-
+    /**
+     * private function to execute request
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {string?} method HTTP method
+     * @param {string?} bodyStr json str of value to send
+     * @param {Function?} unsuccessCallback 
+     * @returns {Promise} promise of fetch
+     */
     #_request = (ressourceUrl, callback, method = 'GET', bodyStr, unsuccessCallback) => {
-        // if(undefined===method)method='GET';
-       return  fetch(`${this.#baseurl}${ressourceUrl}`, {
+        // definition de val. par def. en es5 -->if(undefined===method)method='GET';
+        return fetch(`${this.#baseurl}${ressourceUrl}`, {
             method: method,
             headers: {
                 "Accept": "application/json",
@@ -35,81 +23,66 @@ class Fetch {
             body: (undefined !== bodyStr && typeof bodyStr == 'string' ? bodyStr : undefined)
         })
             .then((resp) => resp.json(), (resp) => {
-                if (undefined !== unsuccessCallback) { unsuccessCallback(resp) } // si rien
+                if (undefined !== unsuccessCallback) { unsuccessCallback(resp) }
             })
             .then((returnedValue) => {
                 if (undefined !== callback) {
                     callback(returnedValue);
                 }
                 return returnedValue;
-            }
-            )
+            })
     }
-
-/***
- *  Private method of post
- *  @param {String} ressourceUrl value  ressourceUrl
- *  @param {Function} callback value  callback
- *  @param {Object} Object value  Object
- *  @param {Function} unsuccessCallback value  unsuccessCallback
- *  @returns  {Promise} promise of fetch
- * 
- */
+    /**
+     * post a new ressource
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {object} object 
+     * @param {Function?} unsuccessCallback 
+     * @returns {Promise}
+     */
     post(ressourceUrl, callback, object, unsuccessCallback) {
-        this.#_request(ressourceUrl, callback, 'POST', JSON.stringify(object), unsuccessCallback)
+        return this.#_request(ressourceUrl, callback, 'POST', JSON.stringify(object), unsuccessCallback)
     }
-
-/***
- *  Private method of put
- *  @param {String} ressourceUrl value  ressourceUrl
- *  @param {Function} callback value  callback
- *  @param {Object} Object value  Object
- *  @param {Function} unsuccessCallback value  unsuccessCallback
- *  @returns  {Promise} promise of fetch
- * 
- */
+    /**
+     * update a ressource
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {object} object 
+     * @param {Function?} unsuccessCallback 
+     * @returns {Promise}
+     */
     put(ressourceUrl, callback, object, unsuccessCallback) {
-        this.#_request(ressourceUrl, callback, 'PUT', JSON.stringify(object), unsuccessCallback)
+        return this.#_request(ressourceUrl, callback, 'PUT', JSON.stringify(object), unsuccessCallback)
     }
-
-
-    /***
- *  Private method of get
- *  @param {String} ressourceUrl value  ressourceUrl
- *  @param {Function} callback value  callback
- *  @param {Object} Object value  Object
- *  @param {Function} unsuccessCallback value  unsuccessCallback
- *  @returns  {Promise} promise of fetch
- * 
- */
-    get(ressourceUrl, callback, object, unsuccessCallback) {
-        this.#_request(ressourceUrl, callback, 'GET', undefined, unsuccessCallback)
+    /**
+     * merge new ressource with old ressource values
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {object} object 
+     * @param {Function?} unsuccessCallback 
+     * @returns {Promise}
+     */
+    patch(ressourceUrl, callback, object, unsuccessCallback) {
+        return this.#_request(ressourceUrl, callback, 'PATCH', JSON.stringify(object), unsuccessCallback)
     }
-
-    /***
- *  Private method of del
- *  @param {String} ressourceUrl value  ressourceUrl
- *  @param {Function} callback value  callback
- *  @param {Object} Object value  Object
- *  @param {Function} unsuccessCallback value  unsuccessCallback
- *  @returns  {Promise} promise of fetch
- * 
- */
-    del(ressourceUrl, callback, object, unsuccessCallback) {
-        this.#_request(ressourceUrl, callback, 'DELETE', undefined, unsuccessCallback)
+    /**
+     * get a ressource
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {Function} unsuccessCallback 
+     * @returns {Promise}
+     */
+    get(ressourceUrl, callback, unsuccessCallback) {
+        return this.#_request(ressourceUrl, callback, undefined, undefined, unsuccessCallback)
     }
-
-
-   // 
-    //patch(ressourceUrl, callback, object, unsuccessCallback) {
-     //   this.#_request(ressourceUrl, callback, 'PATCH', JSON.stringify(object), unsuccessCallback)
-   // }
-
-
-
-
-
-
-
-
+     /**
+     * delete a ressource
+     * @param {string} ressourceUrl uri of ressource in server  
+     * @param {Function} callback 
+     * @param {Function?} unsuccessCallback 
+     * @returns {Promise}
+     */
+    del(ressourceUrl, callback, unsuccessCallback) {
+        return this.#_request(ressourceUrl, callback, 'DELETE', undefined, unsuccessCallback)
+    }
 }

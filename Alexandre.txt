@@ -285,3 +285,15 @@ let produit=new Product(10, 'zod',1000000)
 console.log(produit)
 JSON.stringify(produit) --< QUE LES PUBLICS
 
+
+// type appel
+fetchloacl.put('https://localhost:5679', (obj) => console.log(obj),  boat,(obj) => console.log(obj))
+
+
+//npm i -Save -dev typescript
+-->//npm i -g typescript --> au niveau global dans le file (pour le user)
+
+
+//tsc : typescript (tsc) --> javascript
+
+-->//tsc --init
