@@ -19,18 +19,23 @@ import {DOMProducts} from './metierDom.js'
 //node possede pas DOM
 //differencier métier pure du dom
 
-const produits= new DOMProducts('#list');
-function onsearchchange(evt){
-    const searcval=evt.target.value;
-    produits.makeSearch(searcval);
-}   
+const products = new DOMProducts('#list');
+function onsearchchange(evt) {
+    evt.target.style.backgroundColor = "white";
 
-
-function initDomEvent(){
-    document.querySelector('#finder input').addEventListener('input', onsearchchange);
+    const regex = /^[a-z]{3,}$/;
+    const searchval = evt.target.value;
+    if (regex.exec(searchval) === null) {
+        if(searchval.length>=3)          evt.target.style.backgroundColor = "tomato";
+        return;
+    }
+    console.log(searchval);
+    products.makeSearch(searchval);
 }
-
-initDomEvent()
+function initDomEvent() {
+    document.querySelector('#finder input').addEventListener('input', onsearchchange)
+}
+initDomEvent();
 
 
 
