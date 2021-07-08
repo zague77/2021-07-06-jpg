@@ -319,3 +319,21 @@ class FetchCrud {
     // babel es6--> es5 (transpile)
     //webpack : package la version complete (.chunk agglomérat tout compiler) --> rassemeble tout / assemblage
 
+
+//dans console : emuler nouvelle page
+window.history.pushState('','nouvelle page','./produit/1')
+
+
+//window.location
+
+//kiss : keep it simple and stupid
+
+//https://www.w3schools.com/jsref/dom_obj_event.asp
+//blur : sort de input 
+
+//cookie - sessionstorage - localstorage
+//websql : sql92 , intégéré // API HTML5 (qui a surchargé HTML)
+//
+
+
+//https://regex101.com/

@@ -17,6 +17,9 @@ export class DOMProducts extends RestArray {
             })
     }
 
+    cleanResultView(){
+        document.querySelector(this.#DOMListSelector).innerHTML='';
+    }
 
     showResults() {
         const list = document.querySelector(this.#DOMListSelector);

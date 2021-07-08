@@ -20,8 +20,17 @@ import {DOMProducts} from './metierDom.js'
 //differencier métier pure du dom
 
 const produits= new DOMProducts('#list');
-   
+function onsearchchange(evt){
+    const searcval=evt.target.value;
+    produits.makeSearch(searcval);
+}   
 
+
+function initDomEvent(){
+    document.querySelector('#finder input').addEventListener('input', onsearchchange);
+}
+
+initDomEvent()
 
 
 
