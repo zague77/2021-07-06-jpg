@@ -4,9 +4,10 @@ import { RESSOURCES } from './fetch.js'
 export class DOMProducts extends RestArray {
     filtreArray;
     #DOMListSelector;
+    #DOMViewerSelector = '#list-view';
     constructor(DOMListSelector) {
         super('products', RESSOURCES.products);
-        this.#DOMListSelector=DOMListSelector;
+        this.#DOMListSelector = DOMListSelector;
         this.loadFromRest()
             .then((values) => {
                 //en ES6
@@ -21,8 +22,8 @@ export class DOMProducts extends RestArray {
         const list = document.querySelector(this.#DOMListSelector);
         list.innerHTML = '<h2>Liste des produits</h2>' //erase tout
         this.filtreArray.map((value, index) => {
-            const domproduct = new DOMProduct(value);
-            const domproductnode = domproduct.makeSearchView();
+            //const domproduct = new DOMProduct(value);
+            const domproductnode = DOMProduct.makeSearchView(value);
             domproductnode.addEventListener('click', this.onresultclick)
             list.append(domproductnode);
         })
@@ -36,34 +37,42 @@ export class DOMProducts extends RestArray {
     }
 
     //function : perte de contexte
-    onresultclick=(evt)=>{
+    onresultclick = (evt) => {
         console.log(evt);
         //const id=this.id.substring(7); 
-        const id=evt.target.id.substring(7); //on délegue qui y va
+        // const id=evt.target.id.substring(7); //on délegue qui y va
+        const id = evt.currentTarget.id.substring(7); //on délegue qui y va
+        console.log('current' + evt.currentTarget);
         console.log(id);
-        const prodclick = this.find((value, index) => value.id===Number(id))
+        const prodclick = this.find((value, index) => value.id === Number(id))
         console.log(prodclick);
+        this.showAClickedResult(prodclick);
     }
+
+
+    showAClickedResult(product) {
+        
+        DOMProduct.fillItemViewer(product,this.#DOMViewerSelector);
+
+    }
+
 
 }
 
 
 class DOMProduct {
-    product
-    constructor(product) {
-        this.product = product;
-    }
+
 
     //wcag : 1A , accès du site (contrainte à mettre en place)
 
-    makeSearchView() {
+    static makeSearchView(product) {
         const div = document.createElement('div');
         div.className = 'list-produit';
-        div.id="result-"+this.product.id;
+        div.id = "result-" + product.id;
 
         //img
         const img = document.createElement('img');
-        img.src = this.product.img;
+        img.src = product.img;
         div.append(img);
 
         //content text
@@ -73,7 +82,7 @@ class DOMProduct {
 
         //content text
         const h2 = document.createElement('h2');
-        h2.innerHTML = this.product.name;
+        h2.innerHTML = product.name;
         divcontent.append(h2);
 
         //h3 stock
@@ -81,11 +90,31 @@ class DOMProduct {
         //text align 
         h3.style.textAlign = 'center';
         h3.style.fontWeight = '900';
-        h3.innerHTML = `stock : ${this.product.stock}`;
+        h3.innerHTML = `stock : ${product.stock}`;
         divcontent.append(h3);
 
 
         return div;
+    }
+
+
+    static fillItemViewer(product, viewerSelector) {
+        const viewer = document.querySelector(viewerSelector);
+
+        
+        viewer.querySelector('h1').innerHTML=product.name;
+        viewer.querySelector('img').src=product.img;
+        viewer.querySelector('h2').innerHTML=`stock : ${product.stock}`;
+        viewer.querySelector('.list-view-price').innerHTML=`Prix : ${product.price}€`;
+        viewer.querySelector('.list-view-description').innerHTML=product.description;
+        const ul = viewer.querySelector('ul');
+        ul.innerHTML = '';
+        product.dimensions.map((value, index) => {
+            const keys = Object.keys(value);
+            const li = document.createElement('li');
+            li.innerHTML = keys[0] + ':' + value[keys[0]]
+            ul.append(li);
+        })
     }
 
 }
