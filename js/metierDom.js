@@ -33,8 +33,8 @@ export class DOMProducts extends RestArray {
     }
 
 
-    makeSearch(serachedName) {
-        this.filtreArray = this.filter((value, index) => value.name.includes(serachedName))
+    makeSearch(searchname) {
+        this.filtreArray = this.filter((value, index) => value.name.includes(searchname))
         this.showResults();
 
     }
