@@ -337,3 +337,13 @@ window.history.pushState('','nouvelle page','./produit/1')
 
 
 //https://regex101.com/
+
+//ecmascript 
+
+
+///TYPESCRIPT
+
+///Install REACT
+
+/// Jour 4 : JEST pour test dans react
+///Test sur REACT
