@@ -1,5 +1,38 @@
 const REST_BASE_URL = 'localhost:5679'
-class Product {
+import { textChangeRangeIsUnchanged } from 'typescript';
+import Fetch,{RESSOURCES,BASE_SRV_URL} from './fetch.js';
+export default class RestArray extends Array {
+    ressourceName
+    ressourceEndpointUrl
+    constructor(ressourceName,ressourceEndpointUrl){
+        super()
+        this.ressourceEndpointUrl=ressourceEndpointUrl;
+        this.ressourceName=ressourceName;
+    }
+    initFromJson(jsonStr){
+        const inputArray=JSON.parse(jsonStr);
+        inputArray.map((elem,index) => {
+            this.push(elem);
+        });
+    }
+    cleanArray(){
+        this.splice(0,this.length);
+    }
+    loadFromRest()
+    {
+        this.cleanArray();
+        const f=new Fetch(`${BASE_SRV_URL}`);
+        return f.get(this.ressourceEndpointUrl,(restContent) => {
+            if(Array.isArray(restContent))
+            {
+                restContent.map((value, index) => {
+                    this.push(value);
+                })
+            }
+        })
+    }
+}
+export class Product {
     static TVA = { ALIM: 5.5, NON_ALIM: 20.6 }
     static RESSOURCE_NAME = '/products'
     price
@@ -77,7 +110,7 @@ class Product {
     }
 }
 
-class Boat extends Product {
+export class Boat extends Product {
     #_dimensions = []
     constructor(id, name, price) {
         super(id, name, price);

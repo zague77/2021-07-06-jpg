@@ -297,3 +297,18 @@ fetchloacl.put('https://localhost:5679', (obj) => console.log(obj),  boat,(obj) 
 //tsc : typescript (tsc) --> javascript
 
 -->//tsc --init
+
+JOUR 3
+ <script src="/js/fetch.js"></script>
+    <script src="/js/xhr.js"></script>
+    <script src="/js/metier.js"></script>
+    <script src="/js/app.js"></script>
+    devient
+
+        <script src="/js/app.js" type='module'></script>
+
+// tsc ou babel
+
+class FetchCrud {
+  -->
+  export FetchCrud {
