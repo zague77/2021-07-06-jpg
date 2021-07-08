@@ -2,7 +2,7 @@
 // limitation au niveau module
 
 
-console.log('%c%s', 'color:green;font-weight:900;font-size:12pt','FORMATION 08-07-2021');
+console.log('%c%s', 'color:green;font-weight:900;font-size:12pt','FORMATION');
 
 //import classique
 /*import { BASE_SRV_URL as REST_URL, RESSOURCES } from './fetch.js';

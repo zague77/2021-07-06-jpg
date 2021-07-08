@@ -347,3 +347,6 @@ window.history.pushState('','nouvelle page','./produit/1')
 
 /// Jour 4 : JEST pour test dans react
 ///Test sur REACT
+
+nouveau response
+npx create-react-app app  --template=typescript
