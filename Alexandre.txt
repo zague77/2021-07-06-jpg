@@ -315,4 +315,7 @@ class FetchCrud {
 
 
 
-    //
+    // tsc tsc --> js
+    // babel es6--> es5 (transpile)
+    //webpack : package la version complete (.chunk agglomérat tout compiler) --> rassemeble tout / assemblage
+
