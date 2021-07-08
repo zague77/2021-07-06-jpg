@@ -22,7 +22,9 @@ export class DOMProducts extends RestArray {
         list.innerHTML = '<h2>Liste des produits</h2>' //erase tout
         this.filtreArray.map((value, index) => {
             const domproduct = new DOMProduct(value);
-            list.append(domproduct.makeSearchView());
+            const domproductnode = domproduct.makeSearchView();
+            domproductnode.addEventListener('click', this.onresultclick)
+            list.append(domproductnode);
         })
     }
 
@@ -31,6 +33,16 @@ export class DOMProducts extends RestArray {
         this.filtreArray = this.filter((value, index) => value.name.includes(serachedName))
         this.showResults();
 
+    }
+
+    //function : perte de contexte
+    onresultclick=(evt)=>{
+        console.log(evt);
+        //const id=this.id.substring(7); 
+        const id=evt.target.id.substring(7); //on délegue qui y va
+        console.log(id);
+        const prodclick = this.find((value, index) => value.id===Number(id))
+        console.log(prodclick);
     }
 
 }
@@ -47,6 +59,7 @@ class DOMProduct {
     makeSearchView() {
         const div = document.createElement('div');
         div.className = 'list-produit';
+        div.id="result-"+this.product.id;
 
         //img
         const img = document.createElement('img');
