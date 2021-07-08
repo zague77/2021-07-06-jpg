@@ -1,5 +1,5 @@
-export const BASE_SRV_URL='http://localhost:5629'
-export const RESSOURCE=Object.freeze({ products:'/products', categories:'/categories'})
+export const BASE_SRV_URL='http://localhost:5679'
+export const RESSOURCES=Object.freeze({ products:'/products', categories:'/categories'})
 
 export default class FetchCrud {
     #baseurl;

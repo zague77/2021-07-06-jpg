@@ -1,11 +1,10 @@
 const REST_BASE_URL = 'localhost:5679'
-import { textChangeRangeIsUnchanged } from 'typescript';
 import Fetch,{RESSOURCES,BASE_SRV_URL} from './fetch.js';
 export default class RestArray extends Array {
     ressourceName
     ressourceEndpointUrl
     constructor(ressourceName,ressourceEndpointUrl){
-        super()
+        super();
         this.ressourceEndpointUrl=ressourceEndpointUrl;
         this.ressourceName=ressourceName;
     }
@@ -20,7 +19,7 @@ export default class RestArray extends Array {
     }
     loadFromRest()
     {
-        this.cleanArray();
+      //  this.cleanArray();
         const f=new Fetch(`${BASE_SRV_URL}`);
         return f.get(this.ressourceEndpointUrl,(restContent) => {
             if(Array.isArray(restContent))
