@@ -426,7 +426,12 @@ https://github.com/champix56/react-native-template
 
 
 
+librairie react
 
+to seee librairy
+npx react app
+create react library : pour pousse npm
+npm publish
 
 
 
