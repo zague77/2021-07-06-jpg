@@ -1,3 +1,5 @@
+Alexandre Desorbaix
+
 ---JOPURNEE 1
 
 ---Settings sets : plugin
@@ -328,7 +330,7 @@ window.history.pushState('','nouvelle page','./produit/1')
 
 //kiss : keep it simple and stupid
 
-//https://www.w3schools.com/jsref/dom_obj_event.asp
+Site https://www.w3schools.com/jsref/dom_obj_event.asp
 //blur : sort de input 
 
 //cookie - sessionstorage - localstorage
@@ -336,7 +338,7 @@ window.history.pushState('','nouvelle page','./produit/1')
 //
 
 
-//https://regex101.com/
+Site  https://regex101.com/
 
 //ecmascript 
 
@@ -370,7 +372,63 @@ We suggest that you begin by typing:
   npm start
 
 
-npm -g install serve
+command 1 :npm -g install serve
 
---serve -s build 
+command 2 : serve -s build 
 version buildé
+
+
+https://www.npmjs.com/package/react-graphical-ui
+
+on peux récupérer depuis
+
+https://www.npmjs.com/package/react-graphical-ui
+npm i -s react-graphical-ui
+
+
+generate-react-cli
+
+react storybook researche :
+https://storybook.js.org/docs/react/get-started/introduction
+//explication champ et exemple de code
+//fichier de code par composant
+//évite de ré-écrire
+
+pour angular https://compodoc.app/
+
+react
+function : que UI, pas de décision
+et
+classcomponent  : this .styate : un seul état
+et depuis le hook plusieurs étants
+--> re rendu du component --> re updtae
+
+
+--> un frere parle pas à sa soeur : entre deux composants
+--> app contient tous les états 
+
+
+Fonction pure : 
+n paramètrre fixes --> sortit tjrs pareil
+--> besoin pour les tests
+--> allege écriture des tests
+
+react : 30 lignes un composant
+1 ligne code --> 5 lignes de tests
+
+cature 4
+npx generate-react-cli component values
+
+https://github.com/champix56/react-native-template
+
+
+'ctrl :' --> ajouter commentaire
+
+
+
+
+
+
+
+
+
