@@ -445,3 +445,29 @@ tel formateur
 
 
 npm install après avoir mis à jour package.json
+
+
+npm publish
+
+
+---
+
+test perf : temps exec tache
+console
+
+console.time(‘nomDeTache’);
+
+console.timeEnd(‘nomDeTache’);
+
+
+npm run test
+
+
+jest-dom
+
+react-select-event dans testing-library.com (gestion des events)
+
+react-query : gerer les ressources
+
+
+view git graph
